@@ -46,36 +46,41 @@ btns.forEach(
 )
 
 
-convertBtn.addEventListener("click", () => {
+function convertTemperature() {
   if (input.value === '') {
-    // Display error message
-    // Add the shake animation class
+    // Display error message + shake animation
     inputWrap.classList.add("shake-horizontal");
 
-    // Remove it after 1 second
+    // Remove shake after 1 second
     setTimeout(() => {
       inputWrap.classList.remove("shake-horizontal");
     }, 1000);
 
   } else {
     let temp = Number(input.value); 
-    // Convert input to number for calculation
 
     if (mode === 'celsius') {
       // Celsius → Fahrenheit
       let result = (temp * 9/5) + 32;
-      console.log(result);
       resultDisplay.innerHTML = `${result.toFixed(1)} &deg;F`;
     } else {
       // Fahrenheit → Celsius
       let result = (temp - 32) * 5/9;
-      console.log(result);
-      resultDisplay.innerHTML = `${result.toFixed(1)} &deg;C`; 
-      
-      //result.toFixed rounds up the number
+      resultDisplay.innerHTML = `${result.toFixed(1)} &deg;C`;
     }
   }
+}
+
+// Click event
+convertBtn.addEventListener("click", convertTemperature);
+
+// Enter key event (for both phone + desktop)
+input.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    convertTemperature();
+  }
 });
+
 
 
 
