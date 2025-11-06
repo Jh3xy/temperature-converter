@@ -1,10 +1,12 @@
 
 const btns = document.querySelectorAll('.btn')
 const input = document.getElementById('temperature-input')
+const inputWrap = document.querySelector('.input-wrap')
 const convertBtn = document.querySelector('.convert-btn')
 const tag =  document.querySelector('.tag')
 const description = document.querySelector('.description')
 const resultDisplay = document.querySelector('.result')
+
 
 let mode = 'celsius';
 
@@ -46,7 +48,15 @@ btns.forEach(
 
 convertBtn.addEventListener("click", () => {
   if (input.value === '') {
-    console.log("Display Error message");
+    // Display error message
+    // Add the shake animation class
+    inputWrap.classList.add("shake-horizontal");
+
+    // Remove it after 1 second
+    setTimeout(() => {
+      inputWrap.classList.remove("shake-horizontal");
+    }, 1000);
+
   } else {
     let temp = Number(input.value); 
     // Convert input to number for calculation
