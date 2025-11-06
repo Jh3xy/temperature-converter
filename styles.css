@@ -47,7 +47,7 @@ h1{
     background-color: var(--clr-white);
     border-radius: 1rem;
     box-shadow: 2px 2px 0 rgb(0 0 0 / 0.1);
-    padding:  2rem 1rem;
+    padding:  2rem 1.5rem;
 }
 .card p{
     color: var(--clr-grey-500);
@@ -55,10 +55,10 @@ h1{
     margin-top: .3rem;
 }
 .switch{
-    margin:  1.2rem auto;
+    margin:  1.2rem auto 3rem;
     padding: .5rem;
     background-color: red;
-    width: 80%;
+    width: 90%;
     max-width: 250px;
     display: flex;
     align-items: center;
@@ -72,9 +72,44 @@ h1{
     outline: none;
     border: none;
     background-color: transparent;
+    font-family: inherit;
     padding: 1rem;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1rem;
+    color: hsl(186, 15%, 59%);
+}
+.btn.active{
+    background-color:  var(--clr-white);
+    border-radius: inherit;
+    color: var(--clr-grey-900);
+}
+label{
+    display: block;
+    text-align: start;
+    font-weight: 600;
+    margin-bottom: .6rem;
+    color: var(--clr-grey-900);
+}
+.input-wrap{
+    border:  1px solid var(--clr-grey-500);
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: 1rem .4rem;
+    border-radius: 10px;
+}
+input[type="number"]{
+    flex: 1;
+    border: transparent;
+    outline: transparent;
+    background: transparent;
+    color: var(--clr-grey-900);
+    padding: 4px;
+    caret-color: var(--clr-grey-900);
+    font-family: inherit;
+}
+input[type="number"]::placeholder{
+    color: var(--clr-grey-500);
 }
 
 
