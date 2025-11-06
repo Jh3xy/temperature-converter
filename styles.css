@@ -97,6 +97,7 @@ label{
     gap: .5rem;
     padding: 1rem .4rem;
     border-radius: 10px;
+    font-size: 19px;
 }
 input[type="number"]{
     flex: 1;
@@ -107,9 +108,43 @@ input[type="number"]{
     padding: 4px;
     caret-color: var(--clr-grey-900);
     font-family: inherit;
+    font-size: inherit;
 }
 input[type="number"]::placeholder{
     color: var(--clr-grey-500);
+}
+.input-wrap:has(input[type="number"]:focus){
+    border:  2px solid var(--clr-green-600);
+}
+.tag{
+    color: hsl(186, 15%, 40%);
+    margin-right: 10px;
+}
+.convert-btn{
+    margin:  2rem auto ;
+    outline: transparent;
+    border:  transparent;
+    padding:  1.4rem 3rem;
+    font-size: 1.2rem;
+    border-radius: 50vh;
+    color:  var(--clr-white);
+    background-color:  var(--clr-green-600);
+    font-weight: 600;
+}
+.results{
+    background-color:  var(--clr-green-200);
+    padding: 1.6rem 3rem;
+    margin-bottom:  1.5rem;
+    border-radius: 20px;
+}
+.results p{
+    color:  var(--clr-green-600);
+}
+.result{
+    font-size: 4rem;
+    color:  var(--clr-green-600);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 
