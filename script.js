@@ -4,10 +4,9 @@ const input = document.getElementById('temperature-input')
 const convertBtn = document.querySelector('.convert-btn')
 const tag =  document.querySelector('.tag')
 const description = document.querySelector('.description')
+const resultDisplay = document.querySelector('.result')
 
-let mode = 'celsius'
-// console.log(mode)
-// console.log(tag)  
+let mode = 'celsius';
 
 
 
@@ -20,16 +19,17 @@ btns.forEach(
       // Then add the active class to the clicked button
       btn.classList.add('active')
       
-      // Clear Input current value
+      // Clear Input and rsults current value
       input.value = ''
+      resultDisplay.innerHTML = '--'
       
       // Get Active btn
       const activeBtn = document.querySelector('.active')
       
       // Set mode variable to be equal to activeBtn data-id
       mode = activeBtn.dataset.id
-      console.log(activeBtn)
-      console.log(`current mode is: ${mode}`)
+      // console.log(activeBtn)
+      // console.log(`current mode is: ${mode}`)
       
       if (mode === 'fahrenheit') {
         tag.innerHTML = "&deg;F"
@@ -44,15 +44,30 @@ btns.forEach(
 )
 
 
-convertBtn.addEventListener("click", ()=> {
-  // Check Mode
-  if (mode === 'celsius') {
-      console.log(`Calculations will be in ${mode}`)
+convertBtn.addEventListener("click", () => {
+  if (input.value === '') {
+    console.log("Display Error message");
+  } else {
+    let temp = Number(input.value); 
+    // Convert input to number for calculation
+
+    if (mode === 'celsius') {
+      // Celsius → Fahrenheit
+      let result = (temp * 9/5) + 32;
+      console.log(result);
+      resultDisplay.innerHTML = `${result.toFixed(1)} &deg;F`;
     } else {
+      // Fahrenheit → Celsius
+      let result = (temp - 32) * 5/9;
+      console.log(result);
+      resultDisplay.innerHTML = `${result.toFixed(1)} &deg;C`; 
       
-      console.log(`Calculations will be in ${mode}`)
+      //result.toFixed rounds up the number
+    }
   }
-})
+});
+
+
 
 
 

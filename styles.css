@@ -115,7 +115,7 @@ input[type="number"]::placeholder{
     color: var(--clr-grey-500);
 }
 .input-wrap:has(input[type="number"]:focus){
-    border:  2px solid var(--clr-green-600);
+    border:  1px solid var(--clr-green-600);
 }
 .tag{
     color: hsl(186, 15%, 40%);
